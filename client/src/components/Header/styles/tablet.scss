@@ -1,2 +1,89 @@
 @media screen and (max-width: 992px) {
+  .header {
+    &__navigation {
+      display: none;
+    }
+    &__buttons {
+      display: none;
+    }
+    &__burger{
+      display: flex;
+      &__navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $purple-bg-color;
+        padding: 16px;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: transform .5s ease-out;
+        &__opened{
+          transform: translateY(0%);
+        }
+        &__close{
+          width: 24px;
+          height: 24px;
+          position: relative;
+          align-self: flex-end;
+          &__line{
+            position: absolute;
+            top: 12px;
+            width: 100%;
+            height: 2px;
+            background-color: $white-bg-color;
+          }
+          &__line:first-child{
+            transform: rotate(45deg);
+          }
+          &__line:last-child{
+            transform: rotate(-45deg);
+          }
+        }
+        &__links{
+          margin-top: 32px;
+          ul{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            li a {
+              font-size: 24px;
+              font-weight: 500;
+              color: $white-text-color;
+              text-transform: uppercase;
+              text-decoration: none;
+            }
+          }
+        }
+        &__buttons{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          button {
+            padding: 16px 0;
+            width: 45%;
+            border: 1px $aqua-border-color solid;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s;
+          }
+          button {
+            background-color: $aqua-op-bg-color;
+            color: $aqua-text-color;
+            &:hover {
+              background-color: $aqua-bg-color;
+              color: $black-text-color;
+            }
+          }
+        }
+      }
+    }
+  }
 }
